@@ -88,7 +88,7 @@ def shift(x, a, d):
 @cu
 def rotate(x, a):
     def torus_index(i, a, b):
-        return (i + a) % b
+        return (i + a + b) % b		# FIX: to be sure that the resulting value is positive
         
     def rotate_el(i):
         return x[torus_index(i, a, len(x))]
