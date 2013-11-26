@@ -109,6 +109,7 @@ host_toolchain.ld = siteconf.CC
 
 #enable C++11 features in g++
 host_toolchain.cflags.append('-std=c++0x')
+host_toolchain.cflags.append('-w') #AS per eliminare i warning
 
 import os.path
 include_path = os.path.join(
