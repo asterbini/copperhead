@@ -3,7 +3,10 @@ from copperhead import *
 import unittest
 
 @cu
-def dismantle((x, (y, z))):
+#def dismantle((x, (y, z))):
+def dismantle(x_y_z):
+    (x, y_z) = x_y_z
+    (y, z) = y_z
     return x
 
 @cu
