@@ -46,10 +46,7 @@ def vsub(x, y):
 
 
 @cu
-#def of_spmv((du, dv), width, (m1, m2, m3, m4, m5, m6, m7)):
-def of_spmv(du_dv, width, m1_m7):
-    (du, dv) = du_dv				# AS
-    (m1, m2, m3, m4, m5, m6, m7) = m1_m7	# AS
+def of_spmv((du, dv), width, (m1, m2, m3, m4, m5, m6, m7)):
     e = vadd(vmul(m1, du), vmul(m2, dv))
     f = vadd(vmul(m2, du), vmul(m3, dv))
     e = vadd(e, vmul(m4, shift(du, -width, float32(0.0))))
@@ -77,9 +74,7 @@ def init_cg(V, D, width, A):
     return ur, vr
 
 @cu
-#def precondition(u, v, (p1, p2, p3)):
-def precondition(u, v, p1_p3):
-    (p1, p2, p3) = p1_p3		#AS
+def precondition(u, v, (p1, p2, p3)):
     e = vadd(vmul(p1, u), vmul(p2, v))
     f = vadd(vmul(p2, u), vmul(p3, v))
     return e, f
