@@ -246,7 +246,7 @@ frontend = Pipeline('frontend', [gather_source,
                                  name_tuples,		# AS: added here to avoid inline errors with nested argument lists
                                  inline,
                                  cast_literals,
-                                 name_tuples,
+                                 #name_tuples,
                                  unrebind,
                                  lower_variadics,
                                  type_assignment
