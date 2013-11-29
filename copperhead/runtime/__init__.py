@@ -198,6 +198,8 @@ if cuda_support:
     #This is used to detect whether a binary has already been compiled
     null_nvcc_toolchain = null_toolchain.make_null_toolchain(nvcc_toolchain)
 
+    nvcc_toolchain.cflags.append('-w') #AS per eliminare i warning
+
 else:
     float64_support = True
 
